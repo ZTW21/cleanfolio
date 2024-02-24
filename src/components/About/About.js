@@ -1,7 +1,7 @@
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import { about } from '../../portfolio'
-import resumePDF from '../../../public/resume.pdf'
+import resumePDF from '/resume.pdf'
 import './About.css'
 
 const About = () => {
