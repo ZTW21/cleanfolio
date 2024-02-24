@@ -5,7 +5,6 @@ import './About.css'
 
 const About = () => {
   const { name, role, description, resume, social } = about
-  const resumePdfUrl = process.env.PUBLIC_URL + resume
 
   return (
     <div className='about center'>
@@ -20,7 +19,7 @@ const About = () => {
 
       <div className='about__contact center'>
         {resume && (
-          <a href={resumePDF} target='_blank' rel='noopener noreferrer'>
+          <a href={resume} target='_blank' rel='noopener noreferrer'>
             <span type='button' className='btn btn--outline'>
               Resume
             </span>
