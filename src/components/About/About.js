@@ -1,11 +1,11 @@
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import { about } from '../../portfolio'
-import resumePDF from '../../../public/resume.pdf'
 import './About.css'
 
 const About = () => {
   const { name, role, description, resume, social } = about
+  const resumePdfUrl = process.env.PUBLIC_URL + resume
 
   return (
     <div className='about center'>
