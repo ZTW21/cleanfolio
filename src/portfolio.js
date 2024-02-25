@@ -25,7 +25,7 @@ const projects = [
   {
     name: 'Color Palette Generator',
     description:
-      '<strong>2024 Swift Student Challenge Submission. The app allows users to select images from their device and determine the dominant colors using the Median Cut Quantization (MMCQ) algorithm. The app then displays these colors as a palette, enabling users to copy the hexadecimal values of these colors to the clipboard. Designed with an intuitive SwiftUI interface, the app emphasizes user-friendly interactions and a straightforward process for analyzing and sharing color palettes derived from chosen images.',
+      '2024 Swift Student Challenge Submission. The app allows users to select images from their device and determine the dominant colors using the Median Cut Quantization (MMCQ) algorithm. The app then displays these colors as a palette, enabling users to copy the hexadecimal values of these colors to the clipboard. Designed with an intuitive SwiftUI interface, the app emphasizes user-friendly interactions and a straightforward process for analyzing and sharing color palettes derived from chosen images.',
     stack: ['SwiftUI', 'Swift', 'iOS'],
     sourceCode: 'https://github.com/ZTW21/StudentSwiftChallenge',
     // livePreview: 'https://github.com',
