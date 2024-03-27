@@ -28,7 +28,6 @@ const projects = [
       '2024 Swift Student Challenge Submission. The app allows users to select images from their device and determine the dominant colors using the Median Cut Quantization (MMCQ) algorithm. The app then displays these colors as a palette, enabling users to copy the hexadecimal values of these colors to the clipboard. Designed with an intuitive SwiftUI interface, the app emphasizes user-friendly interactions and a straightforward process for analyzing and sharing color palettes derived from chosen images.',
     stack: ['SwiftUI', 'Swift', 'iOS'],
     sourceCode: 'https://github.com/ZTW21/StudentSwiftChallenge',
-    // livePreview: 'https://github.com',
   },
   
   {
@@ -37,7 +36,6 @@ const projects = [
       'The project aims to enhance the efficiency and reliability of the French public transportation system by identifying patterns and inefficiencies. It utilizes a data-driven approach, focusing on train delays, travel times, and punctuality. The project employs k-means clustering to segment transportation services and identify areas for improvement. The dataset used is sourced from Kaggle\'s "Public Transport Traffic Data in France", encompassing metrics like the number of late trains, average delay of late departing trains, and average travel time.',
     stack: ['Python', 'Jupyter Notebook', 'React', 'Pandas', 'NumPy', 'Matplotlib', 'seaborn', 'Scikit-learn'],
     sourceCode: 'https://github.com/ZTW21/France-Public-Transport-Clustering',
-    // livePreview: 'https://github.com',
   },
   
   {
@@ -46,7 +44,6 @@ const projects = [
       '"AquaPacer" is a watchOS app designed for swimmers to help track their swimming workouts efficiently. It leverages SwiftUI for its interface, integrates with HealthKit for workout management, and offers functionality like a customizable timer, workout session tracking, and idle timer management to enhance the user\'s training experience. This app aims to provide swimmers with a convenient and effective way to monitor their pace and overall workout performance directly from their wrist.',
     stack: ['SwiftUI', 'Swift', 'Combine', 'HealthKit', 'WatchOS'],
     sourceCode: 'https://github.com/ZTW21/Pace-Clock-Swift',
-    // livePreview: 'https://github.com',
   },
   {
     name: 'Water Tracker',
