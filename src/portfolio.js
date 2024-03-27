@@ -56,6 +56,14 @@ const projects = [
     sourceCode: 'https://github.com/ZTW21/itis-4340-water-tracker',
     livePreview: 'https://water-tracker.zackwilson.me/',
   },
+  {
+    name: 'Weather App',
+    description:
+      'A React application integrated with the OpenWeatherMap API, enabling users to search for and display current weather conditions and forecasts. The app uses Tailwind CSS for its design, ensuring a responsive and intuitive user interface. Key functionalities include real-time weather updates, temperature highs and lows, and precipitation chances, all wrapped in a user-friendly design focused on accessibility and efficiency.',
+    stack: ['React', 'Tailwind CSS', 'OpenWeatherMap API', 'Node.js'],
+    sourceCode: 'https://github.com/ZTW21/ITIS-4340-weather-app',
+    livePreview: 'https://weather.zackwilson.me/',
+  },
   
 ]
 
