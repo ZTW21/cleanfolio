@@ -48,16 +48,15 @@ const projects = [
     sourceCode: 'https://github.com/ZTW21/Pace-Clock-Swift',
     // livePreview: 'https://github.com',
   },
-  /*
   {
-    name: 'Project 4',
+    name: 'Water Tracker',
     description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
+      'A React and AWS Amplify-based web app that enables users to track daily water intake. Utilizing GraphQL for efficient data handling and Tailwind CSS for responsive design, the app offers a seamless experience for setting intake goals, logging water consumption, and visualizing progress. Features include user authentication, real-time updates, and a minimalist UI, focusing on ease of use and personal health tracking.',
+    stack: ['React', 'Tailwind CSS', 'AWS Amplify', 'GraphQL', 'Amazon Cognito', 'Node.js'],
+    sourceCode: 'https://github.com/ZTW21/itis-4340-water-tracker',
+    livePreview: 'https://water-tracker.zackwilson.me/',
   },
-  */
+  
 ]
 
 
