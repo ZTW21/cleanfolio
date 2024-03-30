@@ -10,7 +10,7 @@ const about = {
   role: 'Cloud Data Engineer and Mobile Developer',
   description:
     'Passionate about technology, I specialize in Cloud Computing and Mobile Development, showcasing my skills in full-stack projects. My GitHub features innovative work like the my version of the Modified Median Cut Color Quantization algorithm for Apple\'s "Swift Student Challenge." Committed to using tech for real-world solutions, my career is dedicated to making a positive impact.',
-  resume: 'https://drive.google.com/file/d/1Tsr_1BdJ0PvUBRbXBAUqYUpH3-rEVvrd/view?usp=sharing',
+  resume: 'https://drive.google.com/file/d/16TS2zceVYkha1A6oljPFLlFtaqtkW8UM/view?usp=sharing',
   social: {
     linkedin: 'https://www.linkedin.com/in/zachary-t-wilson/',
     github: 'https://github.com/ZTW21',
