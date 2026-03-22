@@ -15,11 +15,11 @@ const App = () => {
   return (
     <div id='top' className={`${themeName} app`}>
       <Header />
+      <About />
+      <Skills />
 
       <main>
-        <About />
         <Projects />
-        <Skills />
         <Contact />
       </main>
 

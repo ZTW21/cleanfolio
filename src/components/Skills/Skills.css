@@ -1,12 +1,51 @@
-.skills__list {
-  max-width: 450px;
-  width: 95%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.skills-marquee {
+  padding: 2.5em 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(128, 128, 128, 0.1);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.1);
 }
 
-.skills__list-item {
-  margin: 0.5em;
+.marquee {
+  padding: 0.5em 0;
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 40s linear infinite;
+  will-change: transform;
+}
+
+.marquee--reverse .marquee__track {
+  animation-direction: reverse;
+  animation-duration: 45s;
+}
+
+.marquee__item {
+  flex-shrink: 0;
+  padding: 0.55em 1.3em;
+  margin: 0 0.35em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.marquee__item:hover {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+}
+
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }

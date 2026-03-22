@@ -19,7 +19,7 @@ h1,
 h2,
 h3,
 h4 {
-  line-height: 1.2;
+  line-height: 1.1;
   color: var(--clr-fg-alt);
 }
 
@@ -49,6 +49,11 @@ a {
 
 button {
   cursor: pointer;
+}
+
+::selection {
+  background: var(--clr-highlight);
+  color: #0a0a0a;
 }
 
 @media (max-width: 900px) {

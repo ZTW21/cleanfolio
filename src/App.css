@@ -1,43 +1,64 @@
 .app {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.5;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
   color: var(--clr-fg);
   background-color: var(--clr-bg);
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .light {
-  --clr-bg: #fcfcfc;
-  --clr-bg-alt: #fff;
-  --clr-fg: #555;
-  --clr-fg-alt: #444;
-  --clr-primary: #3a8d5d;
-  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --clr-bg: #f5f5f0;
+  --clr-bg-alt: #ffffff;
+  --clr-bg-glass: rgba(245, 245, 240, 0.85);
+  --clr-fg: #666666;
+  --clr-fg-alt: #0a0a0a;
+  --clr-primary: #1a1a1a;
+  --clr-highlight: #cdff00;
+  --shadow: 0 2px 30px rgba(0, 0, 0, 0.06);
 }
 
 .dark {
-  --clr-bg: #1f2a23;
-  --clr-bg-alt: #27302d;
-  --clr-fg: #c7d1cc;
-  --clr-fg-alt: #dae5df;
-  --clr-primary: #4e9f75;
-  --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  --clr-bg: #0a0a0a;
+  --clr-bg-alt: #141414;
+  --clr-bg-glass: rgba(10, 10, 10, 0.85);
+  --clr-fg: #888888;
+  --clr-fg-alt: #fafafa;
+  --clr-primary: #cdff00;
+  --clr-highlight: #cdff00;
+  --shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
 }
 
 main {
   max-width: 1100px;
-  width: 95%;
+  width: 92%;
   margin: 0 auto;
 }
 
 .section {
-  margin-top: 5em;
+  margin-top: 6em;
+  padding-top: 2em;
 }
 
 .section__title {
-  text-align: center;
-  margin-bottom: 1em;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: left;
+  margin-bottom: 3em;
+  color: var(--clr-fg);
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.section__title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(128, 128, 128, 0.15);
 }
 
 .center {
@@ -47,23 +68,18 @@ main {
 
 .link {
   color: var(--clr-primary);
-  padding: 0 0 0.3em 0;
   position: relative;
-}
-
-.link:hover {
-  color: var(--clr-primary);
 }
 
 .link::before {
   content: '';
   display: inline;
   width: 0%;
-  height: 0.2em;
+  height: 1.5px;
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   background-color: var(--clr-primary);
-  transition: width 0.2s ease-in;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .link:hover::before,
@@ -73,8 +89,21 @@ main {
 
 .link--nav {
   color: var(--clr-fg);
-  text-transform: lowercase;
   font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  padding: 0.5em 1em;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.link--nav::before {
+  display: none;
+}
+
+.link--nav:hover {
+  color: var(--clr-fg-alt);
+  background: rgba(128, 128, 128, 0.08);
 }
 
 .link--icon {
@@ -82,18 +111,33 @@ main {
 }
 
 .btn {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  padding: 0.8em 1.4em;
-  font-weight: 500;
-  font-size: 0.9rem;
-  text-transform: lowercase;
-  transition: transform 0.2s ease-in-out;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn--primary {
+  padding: 0.85em 2.2em;
+  background-color: var(--clr-primary);
+  color: var(--clr-bg);
+  border-radius: 100px;
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  opacity: 0.88;
 }
 
 .btn--outline {
   color: var(--clr-primary);
-  border: 2px solid var(--clr-primary);
+  border: 1.5px solid var(--clr-primary);
+  padding: 0.85em 2.2em;
+  border-radius: 100px;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -113,23 +157,12 @@ main {
   left: 0;
   top: 0;
   z-index: -1;
-  transition: right 0.2s ease-in-out;
+  transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn--outline:hover:before,
 .btn--outline:focus:before {
   right: 0;
-}
-
-.btn--plain {
-  text-transform: initial;
-  background-color: var(--clr-bg-alt);
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-  border: 0;
-}
-
-.btn--plain:hover {
-  transform: translateY(-4px);
 }
 
 .btn--icon {
@@ -139,10 +172,6 @@ main {
 .btn--icon:hover,
 .btn--icon:focus {
   color: var(--clr-primary);
-}
-
-.btn--icon:active {
-  transform: translateY(-5px);
 }
 
 @media (max-width: 600px) {

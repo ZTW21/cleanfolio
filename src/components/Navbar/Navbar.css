@@ -1,9 +1,11 @@
 .nav__list {
   margin-right: 1.5em;
   display: flex;
+  gap: 0.25em;
 }
+
 .nav__list-item {
-  margin-left: 1.5em;
+  /* gap handles spacing */
 }
 
 .app .nav__hamburger {
@@ -25,10 +27,20 @@
     width: 100%;
     height: 100%;
     z-index: 2;
+    background-color: var(--clr-bg);
+    gap: 0.5em;
   }
 
   .nav__list-item {
     margin: 0.5em 0;
+  }
+
+  .app .link--nav {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Syne', sans-serif;
+    letter-spacing: -0.02em;
+    padding: 0.3em 0.6em;
   }
 
   .app .nav__hamburger {

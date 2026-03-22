@@ -5,8 +5,10 @@ const Footer = () => (
     <a
       href='https://github.com/ZTW21/cleanfolio'
       className='link footer__link'
+      target='_blank'
+      rel='noopener noreferrer'
     >
-      Updated Spring 2024
+      &copy; {new Date().getFullYear()} Zack Wilson
     </a>
   </footer>
 )

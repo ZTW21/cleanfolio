@@ -1,20 +1,31 @@
-import uniqid from 'uniqid'
 import { skills } from '../../portfolio'
 import './Skills.css'
 
 const Skills = () => {
   if (!skills.length) return null
 
+  const doubled = [...skills, ...skills]
+
   return (
-    <section className='section skills' id='skills'>
-      <h2 className='section__title'>Skills</h2>
-      <ul className='skills__list'>
-        {skills.map((skill) => (
-          <li key={uniqid()} className='skills__list-item btn btn--plain'>
-            {skill}
-          </li>
-        ))}
-      </ul>
+    <section className='skills-marquee' id='skills'>
+      <div className='marquee'>
+        <div className='marquee__track'>
+          {doubled.map((skill, i) => (
+            <span key={`a-${i}`} className='marquee__item'>
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className='marquee marquee--reverse'>
+        <div className='marquee__track'>
+          {doubled.map((skill, i) => (
+            <span key={`b-${i}`} className='marquee__item'>
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
