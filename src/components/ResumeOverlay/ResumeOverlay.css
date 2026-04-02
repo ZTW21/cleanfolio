@@ -1,0 +1,132 @@
+.resume-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--clr-void);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  animation: resumeFadeIn 0.3s var(--ease-explosive) both;
+}
+
+@keyframes resumeFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.resume-overlay__noise {
+  position: fixed;
+  inset: 0;
+  background: var(--noise);
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.resume-overlay__header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--clr-ash);
+  flex-shrink: 0;
+}
+
+.resume-overlay__close {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--clr-bone);
+  background: none;
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--clr-ash);
+  transition: color 100ms var(--ease-snap),
+              border-color 100ms var(--ease-snap);
+}
+
+.resume-overlay__close:focus {
+  outline: none;
+}
+
+.resume-overlay__close:focus-visible {
+  border-color: var(--clr-signal);
+}
+
+.resume-overlay__close:hover {
+  color: var(--clr-signal);
+  border-color: var(--clr-signal);
+}
+
+.resume-overlay__close-x {
+  font-size: var(--text-lg);
+  line-height: 1;
+}
+
+.resume-overlay__close-label {
+  font-size: var(--text-xs);
+}
+
+.resume-overlay__download {
+  font-size: var(--text-xs);
+}
+
+.resume-overlay__frame {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: var(--space-2);
+  min-height: 0;
+}
+
+.resume-overlay__pdf {
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  border: 1px solid var(--clr-ash);
+  background: white;
+}
+
+.resume-overlay__fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  border: 1px solid var(--clr-ash);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--clr-ghost);
+  text-align: center;
+  padding: var(--space-4);
+}
+
+.resume-overlay__fallback a {
+  color: var(--clr-signal);
+}
+
+@media (max-width: 768px) {
+  .resume-overlay__frame {
+    padding: var(--space-1);
+  }
+
+  .resume-overlay__header {
+    padding: var(--space-2);
+  }
+}

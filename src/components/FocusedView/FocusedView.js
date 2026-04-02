@@ -3,7 +3,7 @@ import { about, projects, skills, contact } from '../../portfolio'
 import { GitHubIcon, LinkedInIcon, ExternalLinkIcon } from '../Icons'
 import './FocusedView.css'
 
-const FocusedView = ({ zoneId, onBack }) => {
+const FocusedView = ({ zoneId, onBack, onResumeOpen }) => {
   const backRef = useRef(null)
 
   // Move focus to the back button when the view mounts (for keyboard users)
@@ -34,14 +34,13 @@ const FocusedView = ({ zoneId, onBack }) => {
           </p>
           <div className='focused__actions focused__animate'>
             {about.resume && (
-              <a
-                href={about.resume}
-                target='_blank'
-                rel='noopener noreferrer'
+              <button
+                type='button'
                 className='trigger'
+                onClick={onResumeOpen}
               >
                 Resume
-              </a>
+              </button>
             )}
             {about.social?.github && (
               <a
@@ -175,9 +174,6 @@ const FocusedView = ({ zoneId, onBack }) => {
           <div className='focused__animate'>
             <span className='focused__label'>Contact</span>
           </div>
-          <h1 className='focused__contact-heading focused__animate'>
-            Let&apos;s Build<br />Something Great
-          </h1>
           <div className='focused__animate'>
             <a
               href={`mailto:${contact.email}`}

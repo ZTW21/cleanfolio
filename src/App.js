@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 import Landing from './components/Landing/Landing'
 import FocusedView from './components/FocusedView/FocusedView'
+import ResumeOverlay from './components/ResumeOverlay/ResumeOverlay'
 import { about } from './portfolio'
 import './App.css'
 
@@ -10,6 +11,7 @@ const App = () => {
   const [activeZone, setActiveZone] = useState(null)
   const [pendingZone, setPendingZone] = useState(null)
   const [phase, setPhase] = useState('idle')
+  const [showResume, setShowResume] = useState(false)
   const lastFocusedZone = useRef(null)
 
   useEffect(() => {
@@ -84,9 +86,12 @@ const App = () => {
         )}
 
         {activeZone && (
-          <FocusedView zoneId={activeZone} onBack={handleBack} />
+          <FocusedView zoneId={activeZone} onBack={handleBack} onResumeOpen={() => setShowResume(true)} />
         )}
       </main>
+
+      {/* Resume overlay */}
+      {showResume && <ResumeOverlay onClose={() => setShowResume(false)} />}
 
       {/* Transition overlay */}
       <div

@@ -8,7 +8,7 @@ const about = {
   role: 'iOS & Backend Engineer',
   description:
     'Software Engineer at Ally Invest with 4 years of experience building data infrastructure and shipped iOS apps. 2024 Apple Swift Student Challenge winner. Currently pursuing an MS in Computer Science at Georgia Tech.',
-  resume: 'https://drive.google.com/file/d/1htEby_O90grVP2Bswi45xu5b9ysr2by8/view?usp=sharing',
+  resume: '/resume.pdf',
   social: {
     linkedin: 'https://www.linkedin.com/in/zachary-t-wilson/',
     github: 'https://github.com/ZTW21',
