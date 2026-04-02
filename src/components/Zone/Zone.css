@@ -1,0 +1,121 @@
+.zone {
+  position: relative;
+  border: 1px solid var(--clr-ash);
+  padding: var(--space-3);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 100ms var(--ease-snap);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 0;
+  text-align: left;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+}
+
+.zone::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--noise);
+  opacity: 0;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+}
+
+.zone:hover {
+  border-color: var(--clr-bone);
+}
+
+.zone:hover::before {
+  opacity: 1;
+}
+
+.zone__ghost-number {
+  position: absolute;
+  top: -0.1em;
+  right: var(--space-2);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(4rem, 8vw, 8rem);
+  line-height: 1;
+  color: var(--clr-bone);
+  opacity: 0.04;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+  user-select: none;
+}
+
+.zone:hover .zone__ghost-number {
+  opacity: 0.08;
+}
+
+.zone__content {
+  position: relative;
+  z-index: 1;
+}
+
+.zone__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  color: var(--clr-bone);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25em;
+}
+
+.zone__subtitle {
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  color: var(--clr-ghost);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.zone__badge {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--clr-signal);
+  border: 1px solid var(--clr-signal);
+  padding: 2px 6px;
+  z-index: 2;
+  white-space: nowrap;
+  align-self: flex-start;
+  margin-bottom: auto;
+}
+
+.zone__indicator {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  width: 8px;
+  height: 8px;
+  background: var(--clr-signal);
+  opacity: 0;
+  transition: opacity 150ms var(--ease-snap);
+}
+
+.zone:hover .zone__indicator {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .zone {
+    padding: var(--space-2);
+    min-height: 80px;
+  }
+
+  .zone__ghost-number {
+    font-size: 3rem;
+  }
+
+  .zone__title {
+    font-size: var(--text-base);
+  }
+}

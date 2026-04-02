@@ -1,181 +1,200 @@
+/* ==========================================
+   DESIGN TOKENS
+   ========================================== */
+
+:root {
+  /* Colors */
+  --clr-void: #0A0A0A;
+  --clr-smoke: #1A1A1A;
+  --clr-ash: #2A2A2A;
+  --clr-signal: #CDFF00;
+  --clr-bone: #E8E4DE;
+  --clr-ghost: #888888;  /* Bumped from #666 for WCAG AA contrast */
+
+  /* Typography */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* Type scale (1.414 ratio) */
+  --text-xs: 0.6875rem;    /* 11px */
+  --text-sm: 0.8125rem;    /* 13px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.375rem;     /* 22px */
+  --text-xl: 2rem;         /* 32px */
+  --text-2xl: 2.8125rem;   /* 45px */
+  --text-hero: clamp(4rem, 12vw, 8.75rem);
+
+  /* Spacing (8px base) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-12: 96px;
+  --space-16: 128px;
+
+  /* Easing */
+  --ease-explosive: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-heavy: cubic-bezier(0.7, 0, 0.3, 1);
+  --ease-snap: cubic-bezier(0.5, 0, 0, 1);
+  --ease-drag: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Noise texture (subtle grain) */
+  --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* ==========================================
+   APP SHELL
+   ========================================== */
+
 .app {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
   line-height: 1.6;
-  color: var(--clr-fg);
-  background-color: var(--clr-bg);
+  color: var(--clr-ghost);
+  background-color: var(--clr-void);
+  min-height: 100vh;
+  width: 100vw;
   overflow-x: hidden;
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-.light {
-  --clr-bg: #f5f5f0;
-  --clr-bg-alt: #ffffff;
-  --clr-bg-glass: rgba(245, 245, 240, 0.85);
-  --clr-fg: #666666;
-  --clr-fg-alt: #0a0a0a;
-  --clr-primary: #1a1a1a;
-  --clr-highlight: #cdff00;
-  --shadow: 0 2px 30px rgba(0, 0, 0, 0.06);
-}
-
-.dark {
-  --clr-bg: #0a0a0a;
-  --clr-bg-alt: #141414;
-  --clr-bg-glass: rgba(10, 10, 10, 0.85);
-  --clr-fg: #888888;
-  --clr-fg-alt: #fafafa;
-  --clr-primary: #cdff00;
-  --clr-highlight: #cdff00;
-  --shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
-}
-
-main {
-  max-width: 1100px;
-  width: 92%;
-  margin: 0 auto;
-}
-
-.section {
-  margin-top: 6em;
-  padding-top: 2em;
-}
-
-.section__title {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  text-align: left;
-  margin-bottom: 3em;
-  color: var(--clr-fg);
-  display: flex;
-  align-items: center;
-  gap: 1.5em;
-}
-
-.section__title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: rgba(128, 128, 128, 0.15);
-}
-
-.center {
-  display: flex;
-  align-items: center;
-}
-
-.link {
-  color: var(--clr-primary);
   position: relative;
 }
 
-.link::before {
-  content: '';
-  display: inline;
-  width: 0%;
-  height: 1.5px;
-  position: absolute;
-  bottom: -2px;
-  background-color: var(--clr-primary);
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.app__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  padding: var(--space-3);
 }
 
-.link:hover::before,
-.link:focus::before {
-  width: 100%;
+.app__logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  letter-spacing: -0.03em;
+  color: var(--clr-bone);
+  user-select: none;
 }
 
-.link--nav {
-  color: var(--clr-fg);
-  font-weight: 500;
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
-  padding: 0.5em 1em;
-  border-radius: 100px;
-  transition: all 0.3s ease;
-}
+/* ==========================================
+   TRIGGERS (buttons)
+   ========================================== */
 
-.link--nav::before {
-  display: none;
-}
-
-.link--nav:hover {
-  color: var(--clr-fg-alt);
-  background: rgba(128, 128, 128, 0.08);
-}
-
-.link--icon {
-  color: var(--clr-fg);
-}
-
-.btn {
+.trigger {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 0.7em 1.8em;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--clr-bone);
+  background: transparent;
+  border: 1px solid var(--clr-ash);
   cursor: pointer;
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.03em;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn--primary {
-  padding: 0.85em 2.2em;
-  background-color: var(--clr-primary);
-  color: var(--clr-bg);
-  border-radius: 100px;
-}
-
-.btn--primary:hover {
-  transform: translateY(-2px);
-  opacity: 0.88;
-}
-
-.btn--outline {
-  color: var(--clr-primary);
-  border: 1.5px solid var(--clr-primary);
-  padding: 0.85em 2.2em;
-  border-radius: 100px;
+  transition: border-color 100ms var(--ease-snap),
+              color 100ms var(--ease-snap),
+              background-color 80ms var(--ease-snap),
+              transform 80ms var(--ease-snap);
   position: relative;
-  overflow: hidden;
-  z-index: 1;
 }
 
-.btn--outline:hover,
-.btn--outline:focus {
-  color: var(--clr-bg);
-}
-
-.btn--outline:before {
+.trigger::before {
   content: '';
   position: absolute;
-  background-color: var(--clr-primary);
-  right: 100%;
-  bottom: 0;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  inset: 0;
+  background: var(--noise);
+  opacity: 0;
+  transition: opacity 150ms ease;
+  pointer-events: none;
 }
 
-.btn--outline:hover:before,
-.btn--outline:focus:before {
-  right: 0;
+.trigger:hover {
+  border-color: var(--clr-signal);
+  color: var(--clr-signal);
 }
 
-.btn--icon {
+.trigger:hover::before {
+  opacity: 1;
+}
+
+.trigger:active {
+  background-color: var(--clr-signal);
+  color: var(--clr-void);
+  transform: scale(0.98);
+}
+
+.trigger[aria-disabled='true'] {
+  color: #555555;
+  border-color: transparent;
+  pointer-events: none;
+}
+
+/* ==========================================
+   LINK STYLES
+   ========================================== */
+
+.link {
+  color: var(--clr-bone);
+  transition: color 100ms var(--ease-snap);
+  cursor: pointer;
+}
+
+.link:hover {
+  color: var(--clr-signal);
+}
+
+/* ==========================================
+   UTILITY
+   ========================================== */
+
+.text-signal { color: var(--clr-signal); }
+.text-bone { color: var(--clr-bone); }
+.text-ghost { color: var(--clr-ghost); }
+.text-mono { font-family: var(--font-mono); }
+.text-display { font-family: var(--font-display); font-weight: 700; }
+.uppercase { text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* Visually hidden but accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
   padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.btn--icon:hover,
-.btn--icon:focus {
-  color: var(--clr-primary);
+/* ==========================================
+   TRANSITION OVERLAY (smoked glass)
+   ========================================== */
+
+.app__overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--clr-void);
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-heavy);
 }
 
-@media (max-width: 600px) {
-  .section {
-    margin-top: 4em;
-  }
+.app__overlay--frost {
+  opacity: 1;
+}
+
+.app__overlay--clear {
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-explosive);
 }

@@ -1,15 +1,13 @@
 const header = {
-  // all the properties are optional - can be left empty or deleted
   homepage: 'https://zackwilson.me',
   title: 'ZW.',
 }
 
 const about = {
-  // all the properties are optional - can be left empty or deleted
   name: 'Zack Wilson',
-  role: 'Cloud Data Engineer and Mobile Developer',
+  role: 'iOS & Backend Engineer',
   description:
-    'Passionate about technology, I specialize in Cloud Computing and Mobile Development, showcasing my skills in full-stack projects. My GitHub features innovative work like the my version of the Modified Median Cut Color Quantization algorithm for Apple\'s "Swift Student Challenge." Committed to using tech for real-world solutions, my career is dedicated to making a positive impact.',
+    'Software Engineer at Ally Invest with 4 years of experience building data infrastructure and shipped iOS apps. 2024 Apple Swift Student Challenge winner. Currently pursuing an MS in Computer Science at Georgia Tech.',
   resume: 'https://drive.google.com/file/d/1htEby_O90grVP2Bswi45xu5b9ysr2by8/view?usp=sharing',
   social: {
     linkedin: 'https://www.linkedin.com/in/zachary-t-wilson/',
@@ -17,77 +15,72 @@ const about = {
   },
 }
 
-
 const projects = [
-  
-  // projects can be added an removed
-  // if there are no projects, Projects section won't show up
   {
-    name: 'Color Palette Generator',
+    name: 'ClearBAC',
     description:
-      '2024 Swift Student Challenge Submission. The app allows users to select images from their device and determine the dominant colors using the Median Cut Quantization (MMCQ) algorithm. The app then displays these colors as a palette, enabling users to copy the hexadecimal values of these colors to the clipboard. Designed with an intuitive SwiftUI interface, the app emphasizes user-friendly interactions and a straightforward process for analyzing and sharing color palettes derived from chosen images.',
-    stack: ['SwiftUI', 'Swift', 'iOS'],
+      'Shipped iOS app for real-time blood alcohol content tracking. Calculates BAC trajectories using the Widmark equation, projects time to sober, and visualizes consumption patterns with Swift Charts. Features a low-friction drink logging engine, session history with detailed BAC graphs, and a GitHub-style activity chart showing 14 weeks of drinking patterns.',
+    stack: ['SwiftUI', 'Swift Charts', 'Core Data', 'Widmark Equation'],
+    sourceCode: 'https://github.com/ZTW21/BetterBAC',
+    screenshots: ['/images/projects/clearbac-1.svg'],
+  },
+  {
+    name: 'Paletter',
+    description:
+      '2024 Apple Swift Student Challenge winning submission. Extracts dominant colors from any image using a modified Median Cut Quantization (MMCQ) algorithm built from scratch. Generates copyable hex color palettes with an intuitive SwiftUI interface designed around a single-gesture workflow.',
+    stack: ['SwiftUI', 'MMCQ Algorithm', 'Color Science', 'Apple SSC Winner'],
     sourceCode: 'https://github.com/ZTW21/StudentSwiftChallenge',
-  },
-  
-  {
-    name: 'Public Transportation Optimization through Clustering',
-    description:
-      'The project aims to enhance the efficiency and reliability of the French public transportation system by identifying patterns and inefficiencies. It utilizes a data-driven approach, focusing on train delays, travel times, and punctuality. The project employs k-means clustering to segment transportation services and identify areas for improvement. The dataset used is sourced from Kaggle\'s "Public Transport Traffic Data in France", encompassing metrics like the number of late trains, average delay of late departing trains, and average travel time.',
-    stack: ['Python', 'Jupyter Notebook', 'React', 'Pandas', 'NumPy', 'Matplotlib', 'seaborn', 'Scikit-learn'],
-    sourceCode: 'https://github.com/ZTW21/France-Public-Transport-Clustering',
-  },
-  
-  {
-    name: 'WatchOS Swimming Pace Clock',
-    description:
-      '"AquaPacer" is a watchOS app designed for swimmers to help track their swimming workouts efficiently. It leverages SwiftUI for its interface, integrates with HealthKit for workout management, and offers functionality like a customizable timer, workout session tracking, and idle timer management to enhance the user\'s training experience. This app aims to provide swimmers with a convenient and effective way to monitor their pace and overall workout performance directly from their wrist.',
-    stack: ['SwiftUI', 'Swift', 'Combine', 'HealthKit', 'WatchOS'],
-    sourceCode: 'https://github.com/ZTW21/Pace-Clock-Swift',
+    screenshots: ['/images/projects/paletter-1.svg'],
+    badge: 'Apple SSC 2024 Winner',
   },
   {
-    name: 'Water Tracker',
+    name: 'Photo Booking Platform',
     description:
-      'A React and AWS Amplify-based web app that enables users to track daily water intake. Utilizing GraphQL for efficient data handling and Tailwind CSS for responsive design, the app offers a seamless experience for setting intake goals, logging water consumption, and visualizing progress. Features include user authentication, real-time updates, and a minimalist UI, focusing on ease of use and personal health tracking.',
-    stack: ['React', 'Tailwind CSS', 'AWS Amplify', 'GraphQL', 'Amazon Cognito', 'Node.js'],
-    sourceCode: 'https://github.com/ZTW21/itis-4340-water-tracker',
-    livePreview: 'https://water-tracker.zackwilson.me/',
+      'Production-grade action photography booking platform. Full-stack application with authenticated booking flows, photographer portfolio galleries, and a client management dashboard. Built with server-side rendering for performance and Framer Motion for fluid page transitions.',
+    stack: ['Next.js', 'TypeScript', 'Firebase', 'Framer Motion'],
+    sourceCode: 'https://github.com/ZTW21/PhotoBookingApp',
+    screenshots: ['/images/projects/photobooking-1.svg'],
   },
   {
-    name: 'Weather App',
+    name: 'FSI Language Courses',
     description:
-      'A React application integrated with the OpenWeatherMap API, enabling users to search for and display current weather conditions and forecasts. The app uses Tailwind CSS for its design, ensuring a responsive and intuitive user interface. Key functionalities include real-time weather updates, temperature highs and lows, and precipitation chances, all wrapped in a user-friendly design focused on accessibility and efficiency.',
-    stack: ['React', 'Tailwind CSS', 'OpenWeatherMap API', 'Node.js'],
-    sourceCode: 'https://github.com/ZTW21/ITIS-4340-weather-app',
-    livePreview: 'https://weather.zackwilson.me/',
+      'Interactive language learning companion for the FSI (Foreign Service Institute) course catalog. Features audio playback for pronunciation practice, flashcard-based vocabulary drills with spaced repetition scheduling, and progress tracking across course modules. Supports multiple languages including Chinese and Spanish.',
+    stack: ['HTML', 'JavaScript', 'Web Audio API', 'Spaced Repetition'],
+    sourceCode: 'https://github.com/ZTW21/fsi',
+    livePreview: 'https://fsi.zackwilson.me/',
+    screenshots: ['/images/projects/fsi-1.svg'],
   },
-  
+  {
+    name: 'Charlotte Club Swim',
+    description:
+      'Deployed website for the UNC Charlotte club swimming team. JSON-driven content management for officer info, competition schedules, team records, and photo galleries. Built so non-technical team officers can update content by editing data files.',
+    stack: ['React', 'CSS', 'Vercel', 'JSON CMS'],
+    sourceCode: 'https://github.com/ZTW21/CharlotteClubSwim-Website',
+    livePreview: 'https://charlotte-club-swim-website.vercel.app/',
+    screenshots: ['/images/projects/clubswim-1.svg'],
+  },
 ]
 
-
 const skills = [
-  // skills can be added or removed
-  // if there are no skills, Skills section won't show up
   'Python',
   'Swift',
+  'SwiftUI',
+  'SQL',
   'Java',
+  'TypeScript',
   'JavaScript',
-  'HTML/CSS',
   'React',
-  'Tailwind CSS',
-  'REST API',
-  'Amazon Web Services',
+  'Next.js',
+  'AWS',
+  'Terraform',
+  'Docker',
+  'Apache Airflow',
+  'PostgreSQL',
+  'FastAPI',
   'Git',
-  'GitLab',
-  'Flutter',
-  'Pandas',
-  'Numpy',
-  'Jupyter Notebook',
-  'Seaborn',
 ]
 
 const contact = {
-  // email is optional - if left empty Contact section won't show up
   email: 'clt@zackwilson.me',
 }
 

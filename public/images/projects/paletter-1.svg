@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 812" width="375" height="812">
+  <rect width="375" height="812" fill="#0A0A0A"/>
+  <!-- Phone outline -->
+  <rect x="1" y="1" width="373" height="810" fill="none" stroke="#2A2A2A" stroke-width="1"/>
+  <!-- Notch -->
+  <rect x="120" y="1" width="135" height="28" fill="#0A0A0A" stroke="#2A2A2A" stroke-width="1"/>
+  <!-- Status bar accent line -->
+  <line x1="0" y1="44" x2="375" y2="44" stroke="#2A2A2A" stroke-width="1"/>
+  <!-- Accent dot -->
+  <circle cx="187" cy="340" r="3" fill="#CDFF00"/>
+  <!-- Project name -->
+  <text x="187" y="390" fill="#666666" font-family="monospace" font-size="20" font-weight="bold" text-anchor="middle" letter-spacing="4">PALETTER</text>
+  <!-- Screenshot label -->
+  <text x="187" y="420" fill="#666666" font-family="monospace" font-size="12" text-anchor="middle" letter-spacing="2">Screenshot 1</text>
+  <!-- Bottom bar hint -->
+  <line x1="130" y1="790" x2="245" y2="790" stroke="#2A2A2A" stroke-width="3"/>
+</svg>

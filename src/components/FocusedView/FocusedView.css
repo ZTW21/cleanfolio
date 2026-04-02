@@ -1,0 +1,375 @@
+.focused {
+  position: absolute;
+  inset: 0;
+  background: var(--clr-void);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 10;
+}
+
+/* Noise overlay on the focused view */
+.focused__noise {
+  position: fixed;
+  inset: 0;
+  background: var(--noise);
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Back button, top-left */
+.focused__back {
+  position: fixed;
+  top: var(--space-3);
+  left: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  letter-spacing: -0.03em;
+  color: var(--clr-bone);
+  background: none;
+  cursor: pointer;
+  z-index: 20;
+  transition: color 100ms var(--ease-snap);
+  padding: var(--space-1) var(--space-2);
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--clr-ash);
+}
+
+.focused__back:focus {
+  outline: none;
+}
+
+.focused__back:focus-visible {
+  border-color: var(--clr-signal);
+}
+
+.focused__back:hover {
+  color: var(--clr-signal);
+  border-color: var(--clr-signal);
+}
+
+.focused__back-arrow {
+  font-size: var(--text-base);
+  transition: transform 150ms var(--ease-snap);
+}
+
+.focused__back:hover .focused__back-arrow {
+  transform: translateX(-2px);
+}
+
+.focused__back-label {
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Content container */
+.focused__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 760px;
+  padding: var(--space-8) var(--space-4) var(--space-6);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Staggered content reveal via CSS */
+.focused__animate {
+  animation: focusedReveal 0.5s var(--ease-explosive) both;
+}
+
+.focused__animate:nth-child(1) { animation-delay: 0.35s; }
+.focused__animate:nth-child(2) { animation-delay: 0.43s; }
+.focused__animate:nth-child(3) { animation-delay: 0.51s; }
+.focused__animate:nth-child(4) { animation-delay: 0.59s; }
+.focused__animate:nth-child(5) { animation-delay: 0.67s; }
+.focused__animate:nth-child(6) { animation-delay: 0.75s; }
+.focused__animate:nth-child(7) { animation-delay: 0.83s; }
+
+@keyframes focusedReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section label */
+.focused__label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--clr-signal);
+  margin-bottom: var(--space-2);
+  border-bottom: 1px solid var(--clr-ash);
+  padding-bottom: var(--space-1);
+}
+
+/* ==========================================
+   ABOUT VIEW
+   ========================================== */
+
+.focused__hero-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-hero);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--clr-bone);
+  margin-bottom: var(--space-3);
+}
+
+.focused__role {
+  font-size: var(--text-base);
+  color: var(--clr-ghost);
+  margin-bottom: var(--space-4);
+  position: relative;
+  display: inline-block;
+}
+
+.focused__role::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--clr-signal);
+  opacity: 0.3;
+}
+
+.focused__description {
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  color: var(--clr-ghost);
+  max-width: 540px;
+  margin-bottom: var(--space-3);
+}
+
+.focused__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.focused__social-link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--clr-ash);
+  color: var(--clr-ghost);
+  transition: border-color 100ms var(--ease-snap),
+              color 100ms var(--ease-snap);
+}
+
+.focused__social-link:hover {
+  border-color: var(--clr-signal);
+  color: var(--clr-signal);
+}
+
+/* ==========================================
+   PROJECT VIEW
+   ========================================== */
+
+.focused__project-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-xl);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--clr-bone);
+  margin-bottom: var(--space-2);
+}
+
+.focused__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: var(--space-3);
+}
+
+.focused__stack-item {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border: 1px solid var(--clr-ash);
+  color: var(--clr-ghost);
+}
+
+/* ==========================================
+   SCREENSHOT GALLERY
+   ========================================== */
+
+.focused__screenshots {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--clr-ash) transparent;
+}
+
+.focused__screenshot-frame {
+  flex-shrink: 0;
+  border: 1px solid var(--clr-ash);
+  transition: border-color 150ms var(--ease-snap);
+  position: relative;
+  overflow: hidden;
+}
+
+.focused__screenshot-frame:hover {
+  border-color: var(--clr-bone);
+}
+
+.focused__screenshot-img {
+  display: block;
+  height: clamp(140px, 22vh, 240px);
+  width: auto;
+  object-fit: contain;
+}
+
+.focused__screenshot-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 300px;
+  height: 200px;
+  border: 1px solid var(--clr-ash);
+}
+
+.focused__screenshot-placeholder span {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--clr-ghost);
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .focused__screenshot-img {
+    height: 260px;
+  }
+}
+
+/* ==========================================
+   SKILLS VIEW
+   ========================================== */
+
+.focused__skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 2px;
+  margin-top: var(--space-2);
+}
+
+.focused__skill-item {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--clr-ash);
+  color: var(--clr-ghost);
+  transition: border-color 100ms var(--ease-snap),
+              color 100ms var(--ease-snap);
+}
+
+.focused__skill-item:hover {
+  border-color: var(--clr-signal);
+  color: var(--clr-signal);
+}
+
+/* Cascade animation — tiles snap in one by one */
+.focused__skill-cascade {
+  animation: skillSlotIn 0.35s var(--ease-explosive) both;
+}
+
+@keyframes skillSlotIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scaleY(0.8);
+    border-color: transparent;
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-2px) scaleY(1.02);
+    border-color: var(--clr-signal);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+    border-color: var(--clr-ash);
+  }
+}
+
+/* ==========================================
+   CONTACT VIEW
+   ========================================== */
+
+.focused__inner--contact {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.focused__contact-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--clr-bone);
+  margin-bottom: var(--space-6);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 768px) {
+  .focused__content {
+    padding: var(--space-8) var(--space-3) var(--space-6);
+    justify-content: flex-start;
+    padding-top: var(--space-12);
+  }
+
+  .focused__hero-name {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .focused__project-name {
+    font-size: var(--text-xl);
+  }
+
+  .focused__skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .focused__actions {
+    flex-wrap: wrap;
+  }
+}
